@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+<!--
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	 Bootstrap CSS 
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+-->
+	<title>Search for Stuff</title>
+	<style>
+        article, aside, figure, footer, header, hgroup, menu, nav, section { display: block; }
+	</style>
+</head>
+<body>
+  <form>
+    <h1>Please enter data</h1>
+    <input id="ow-name" type="text" placeholder="Overwatch name" />
+    <input id="real-name" type="text" placeholder="Real name" />
+    <input id="city" type="text" placeholder="City" />
+    <input type="button" value="Save/Show" onclick="insert()" />
+  </form>
+  <div id="display"></div>
+    
+<script>
+var overwatch  = [];
+var realnames   = [];
+var cities = [];
+
+var titleInput  = document.getElementById("overwatch");
+var nameInput   = document.getElementById("realnames");
+var ticketInput = document.getElementById("cities");
+
+var messageBox  = document.getElementById("display");
+
+function insert ( ) {
+ overwatch.push( titleInput.value );
+ realnames.push( nameInput.value );
+ cities.push( ticketInput.value );
+
+    
+ clearAndShow();
+}
+
+function clearAndShow () {
+  // Clear our fields
+  overwatchInput.value = "";
+  realnamesInput.value = "";
+  citiesInput.value = "";
+  
+  // Show our output
+  messageBox.innerHTML = "";
+  
+  messageBox.innerHTML += "Titles: " + overwatch.join(", ") + "<br/>";
+  messageBox.innerHTML += "Names: " + realnames.join(", ") + "<br/>";
+  messageBox.innerHTML += "Tickets: " + cities.join(", ");
+}
+</script>
+</body>
+</html>
